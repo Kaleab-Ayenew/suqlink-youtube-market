@@ -9,6 +9,7 @@ const Axios = axios.create({
   timeout: 150000000,
   headers: {
     'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': 'Nice',
   },
 });
 // Change request data/error here

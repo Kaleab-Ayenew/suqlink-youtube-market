@@ -187,13 +187,13 @@ const Purchases: NextPageWithLayout = () => {
         !videos.length &&
         rangeMap(LIMIT, (i) => <OrderItemLoader key={`order-loader-${i}`} />)}
 
-      {!isLoading && !videos.length ? (
+      {!isLoading && !videos?.length ? (
         <CartEmpty
           className="my-auto"
           description={t('text-product-purchase-message')}
         />
       ) : (
-        videos.map((video) => (
+        videos?.map((video) => (
           <OrderedItem key={video.platform_id} item={video} />
         ))
       )}

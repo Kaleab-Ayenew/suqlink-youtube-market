@@ -60,11 +60,11 @@ export default function Grid({
           : products.map((product) => (
               <Card key={product.id} product={product} />
             ))} */}
-        {isLoading && !videos.length
+        {isLoading && !videos?.length
           ? rangeMap(limit, (i) => (
               <ProductCardLoader key={i} uniqueKey={`video-${i}`} />
             ))
-          : videos.map((video) => (
+          : videos?.map((video) => (
               <Card key={video.platform_id} video={video} />
             ))}
       </motion.div>
