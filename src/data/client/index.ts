@@ -445,55 +445,26 @@ class Client {
       HttpClient.get<CategoryPaginator>(API_ENDPOINTS.CATEGORIES, { ...query }),
   };
   tags = {
-    all: (query?: QueryOptions) =>
-      HttpClient.get<TagPaginator>(API_ENDPOINTS.TAGS, query),
-    get: ({ slug, language }: { slug: string; language?: string }) =>
-      HttpClient.get<Tag>(`${API_ENDPOINTS.TAGS}/${slug}`, { language }),
+    all: (query?: QueryOptions) => [],
+    get: ({ slug, language }: { slug: string; language?: string }) => {
+      return {};
+    },
   };
   types = {
-    all: (query?: TypeQueryOptions) =>
-      HttpClient.get<Type[]>(API_ENDPOINTS.TYPES, { ...query }),
+    all: (query?: TypeQueryOptions) => [],
   };
   shops = {
-    all: (query?: ShopQueryOptions) =>
-      HttpClient.get<ShopPaginator>(API_ENDPOINTS.SHOPS, query),
-    top: ({ name, ...query }: Partial<TopShopQueryOptions> = {}) =>
-      HttpClient.get<ShopPaginator>(API_ENDPOINTS.TOP_SHOPS, {
-        searchJoin: 'and',
-        // withCount: 'products',
-        ...query,
-        search: HttpClient.formatSearchParams({
-          name,
-          is_active: 1,
-        }),
-      }),
-    get: (slug: string) =>
-      HttpClient.get<Shop>(`${API_ENDPOINTS.SHOPS}/${slug}`),
+    all: (query?: ShopQueryOptions) => [],
+    top: ({ name, ...query }: Partial<TopShopQueryOptions> = {}) => [],
+    get: (slug: string) => ({}),
   };
   orders = {
-    all: (query?: OrderQueryOptions) =>
-      HttpClient.get<OrderPaginator>(API_ENDPOINTS.ORDERS, query),
-    get: (tracking_number: string) =>
-      HttpClient.get<Order>(`${API_ENDPOINTS.ORDERS}/${tracking_number}`),
-    downloadable: (query?: OrderQueryOptions) =>
-      HttpClient.get<OrderedFilePaginator>(
-        API_ENDPOINTS.ORDERS_DOWNLOADS,
-        query
-      ),
-    generateDownloadLink: (digital_file_id: string, name?: string) =>
-      HttpClient.post<string>(
-        API_ENDPOINTS.GENERATE_DOWNLOADABLE_PRODUCT_LINK,
-        {
-          digital_file_id,
-        }
-      ),
-    verify: (data: CheckoutVerificationInput) =>
-      HttpClient.post<VerifiedCheckoutResponse>(
-        API_ENDPOINTS.ORDERS_CHECKOUT_VERIFY,
-        data
-      ),
-    create: (data: CreateOrderInput) =>
-      HttpClient.post<Order>(API_ENDPOINTS.ORDERS, data),
+    all: (query?: OrderQueryOptions) => [],
+    get: (tracking_number: string) => [],
+    downloadable: (query?: OrderQueryOptions) => [],
+    generateDownloadLink: (digital_file_id: string, name?: string) => [],
+    verify: (data: CheckoutVerificationInput) => [],
+    create: (data: CreateOrderInput) => [],
     getPaymentIntent: ({
       tracking_number,
       payment_gateway,
@@ -502,16 +473,9 @@ class Client {
       tracking_number: string;
       payment_gateway?: string;
       recall_gateway?: boolean;
-    }) =>
-      HttpClient.get<PaymentIntentCollection>(API_ENDPOINTS.PAYMENT_INTENT, {
-        tracking_number,
-        payment_gateway,
-        recall_gateway,
-      }),
-    payment: (input: CreateOrderPaymentInput) =>
-      HttpClient.post<any>(API_ENDPOINTS.ORDERS_PAYMENT, input),
-    savePaymentMethod: (input: any) =>
-      HttpClient.post<any>(API_ENDPOINTS.SAVE_PAYMENT_METHOD, input),
+    }) => [],
+    payment: (input: CreateOrderPaymentInput) => {},
+    savePaymentMethod: (input: any) => {},
   };
   users = {
     me: () => HttpClient.get<User>(API_ENDPOINTS.USERS_ME),
