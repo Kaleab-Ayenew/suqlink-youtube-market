@@ -1,0 +1,24 @@
+.overlayDiv {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://webneel.com/daily/sites/default/files/images/daily/08-2018/1-nature-photography-spring-season-mumtazshamsee.jpg');
+}
+
+.containerDiv {
+  width: 100%;
+
+  position: relative;
+}
+
+.newBlockerStyle {
+  display: block;
+}

@@ -1,0 +1,37 @@
+const routes = {
+  home: '/',
+  authors: '/authors',
+  explore: '/explore',
+  myvideos: '/myvideos',
+  popularProducts: '/popular-products',
+  about: '/about-us',
+  contact: '/contact-us',
+  purchases: '/purchases',
+  wishlists: '/wishlists',
+  reports: '/reports',
+  questions: '/questions',
+  profile: '/profile',
+  checkout: '/checkout',
+  help: '/help',
+  licensing: '/licensing',
+  refund: '/refund',
+  terms: '/terms',
+  privacy: '/privacy',
+  password: '/password',
+  feed: '/feed',
+  wallet: '/wallet',
+  followedShop: '/followed-authors',
+  orderUrl: (tracking_number: string) =>
+    `/orders/${encodeURIComponent(tracking_number)}`,
+  productUrl: (slug: string) => `/products/${slug}`,
+  videoUrl: (platform_id: string) => `/videos/${platform_id}`,
+  watchUrl: (platform_id: string) => `/watch/${platform_id}`,
+  tagUrl: (slug: string) => `/products/tags/${slug}`,
+  shopUrl: (slug: string) => `/authors/${slug}`,
+  channelUrl: (id: string) => `/channels/${id}`,
+  product: (slug: string) => {
+    return `/products/${encodeURIComponent(slug)}`;
+  },
+  cards: '/cards',
+};
+export default routes;
