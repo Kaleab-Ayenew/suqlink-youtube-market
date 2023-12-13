@@ -14,6 +14,7 @@ import { RegisterBgPattern } from '@/components/auth/register-bg-pattern';
 import { useState } from 'react';
 import useAuth from './use-auth';
 import { useTranslation } from 'next-i18next';
+import { SpinnerLoader } from '../ui/loader/spinner/spinner';
 
 const paymentInfoValidationSchema = yup.object().shape({
   phone_no: yup.string().max(20).required(),
@@ -28,8 +29,10 @@ export default function PaymentInfoForm({
   const { openModal, closeModal } = useModalAction();
   const { authorize } = useAuth();
   let [serverError, setServerError] = useState<ChapaPaymentInfo | null>(null);
+  const [loading, setLoading] = useState(false);
   const { mutate } = useMutation(client.users.get_payment_link, {
     onSuccess: (res) => {
+      setLoading(false);
       window.location.assign(res.link);
       closeModal();
     },
@@ -39,7 +42,9 @@ export default function PaymentInfoForm({
     },
   });
   const onSubmit: SubmitHandler<ChapaPaymentInfo> = (data) => {
+    setLoading(true);
     data.platform_id = platform_id;
+
     mutate(data);
   };
 
@@ -82,8 +87,9 @@ export default function PaymentInfoForm({
                 <Button
                   type="submit"
                   className="!mt-5 w-full text-sm tracking-[0.2px] lg:!mt-7"
+                  disabled={loading}
                 >
-                  Continue to Payment
+                  {loading ? 'Loading...' : 'Continue to Payment'}
                 </Button>
               </>
             )}

@@ -79,7 +79,7 @@ export default function Card({ video }: { video: Video }) {
         />
         <div
           // onClick={() => openModal('PRODUCT_DETAILS', { slug })}
-          onClick={() => openModal('PRODUCT_DETAILS', { platform_id })}
+          onClick={goToDetailsPage}
           className="absolute left-0 top-0 z-10 flex h-full w-full cursor-pointer items-center justify-center gap-9 bg-dark/60 p-4 opacity-0 backdrop-blur-sm transition-all group-hover:gap-5 group-hover:opacity-100 dark:bg-dark/70"
         >
           {/* <button
