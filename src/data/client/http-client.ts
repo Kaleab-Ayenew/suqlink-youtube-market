@@ -5,7 +5,7 @@ import { getAuthToken, removeAuthToken } from './token.utils';
 
 // TODO: Due to windows timeout was set to 15000
 const Axios = axios.create({
-  baseURL: 'https://f235-196-190-61-26.ngrok-free.app/suqlink/yvideos',
+  baseURL: 'https://ubuntu-vps.kal-dev.com/suqlink/yvideos',
   timeout: 150000000,
   headers: {
     'Content-Type': 'application/json',

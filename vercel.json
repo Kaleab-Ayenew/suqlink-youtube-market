@@ -1,7 +1,7 @@
 
 {
   "env": {
-    "NEXT_PUBLIC_REST_API_ENDPOINT": "https://f235-196-190-61-26.ngrok-free.app/suqlink/yvideos",
+    "NEXT_PUBLIC_REST_API_ENDPOINT": "https://ubuntu-vps.kal-dev.com/suqlink/yvideos",
     "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_12345",
     "NEXT_PUBLIC_PAYPAL_CLIENT_TOKEN": "",
     "NEXT_PUBLIC_WEBSITE_URL": "https://suqlink-youtube-market-kxbvjpzxe-kaleab-ayenew.vercel.app/",
@@ -16,7 +16,7 @@
   },
   "build": {
     "env": {
-      "NEXT_PUBLIC_REST_API_ENDPOINT": "https://f235-196-190-61-26.ngrok-free.app/suqlink/yvideos",
+      "NEXT_PUBLIC_REST_API_ENDPOINT": "https://ubuntu-vps.kal-dev.com/suqlink/yvideos",
       "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY": "pk_12345",
       "NEXT_PUBLIC_PAYPAL_CLIENT_TOKEN": "",
       "NEXT_PUBLIC_WEBSITE_URL": "https://suqlink-youtube-market-kxbvjpzxe-kaleab-ayenew.vercel.app/",
