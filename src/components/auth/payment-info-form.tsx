@@ -33,7 +33,7 @@ export default function PaymentInfoForm({
   const { mutate } = useMutation(client.users.get_payment_link, {
     onSuccess: (res) => {
       setLoading(false);
-      window.location.assign(res.link);
+      window.location.href = res.link;
       closeModal();
     },
     onError: (err: any) => {
