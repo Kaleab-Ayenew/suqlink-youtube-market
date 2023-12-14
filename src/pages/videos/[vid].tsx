@@ -29,6 +29,7 @@ import AverageRatings from '@/components/review/average-ratings';
 import ProductQuestions from '@/components/questions/product-questions';
 import isEmpty from 'lodash/isEmpty';
 import invariant from 'tiny-invariant';
+import React from 'react';
 
 // This function gets called at build time
 type ParsedQueryParams = {
@@ -91,8 +92,23 @@ const VideoPage: NextPageWithLayout<
 > = ({ video }) => {
   const { t } = useTranslation('common');
   const { platform_id, video_info, video_price } = video;
+  const [canWatch, setCanWatch] = React.useState(false);
   const router = useRouter();
   //   const previews = getPreviews(gallery, image);
+  React.useLayoutEffect(() => {
+    fetch(
+      `${process.env.NEXT_PUBLIC_REST_API_ENDPOINT}/c/videos/purchased/${platform_id}`,
+      {
+        headers: {
+          Authorization: `Token ${localStorage.getItem('authToken')}`,
+        },
+      }
+    ).then((rsp) => {
+      if (rsp.ok) {
+        setCanWatch(true);
+      }
+    });
+  }, []);
 
   return (
     <div className="relative">
@@ -127,7 +143,11 @@ const VideoPage: NextPageWithLayout<
           variants={fadeInBottom()}
           className="justify-center py-6 lg:flex lg:flex-col lg:py-10"
         >
-          <VideoDetailsPaper video={video} className="lg:block" />
+          <VideoDetailsPaper
+            canWatch={canWatch}
+            video={video}
+            className="lg:block"
+          />
           <div className="lg:mx-auto 3xl:max-w-[1200px]">
             <div className="w-full rtl:space-x-reverse lg:flex lg:space-x-14 lg:pb-3 xl:space-x-20 3xl:space-x-28">
               <div className="hidden lg:block 3xl:max-w-[600px]">
@@ -173,7 +193,7 @@ const VideoPage: NextPageWithLayout<
         variants={fadeInBottomWithScaleY()}
         className="sticky bottom-0 right-0 z-10 hidden h-[100px] w-full border-t border-light-500 bg-light-100 px-8 py-5 dark:border-dark-400 dark:bg-dark-200 lg:flex 3xl:h-[120px]"
       >
-        <VideoDetailsPaper video={video} />
+        <VideoDetailsPaper canWatch={canWatch} video={video} />
       </motion.div>
     </div>
   );

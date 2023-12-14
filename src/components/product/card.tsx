@@ -23,7 +23,7 @@ export default function Card({ video }: { video: Video }) {
   const { openModal } = useModalAction();
   const { isGridCompact } = useGridSwitcher();
   const ch_info = video_info?.ch_info;
-  console.log(video_info, ch_info, 'This is info');
+
   // const { price, basePrice } = usePrice({
   //   amount: product.sale_price ? product.sale_price : product.price,
   //   baseAmount: product.price,

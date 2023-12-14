@@ -41,7 +41,6 @@ export default function RegisterUserForm() {
     },
   });
   const onSubmit: SubmitHandler<RegisterUserInput> = (data) => {
-    console.log('Click Click');
     mutate(data);
   };
 

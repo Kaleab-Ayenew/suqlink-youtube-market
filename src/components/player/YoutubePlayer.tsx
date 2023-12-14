@@ -23,7 +23,6 @@ export const VideoJS = (props) => {
 
       player.on('pause', () => {
         overlayRef.current.style.display = 'flex';
-        console.log('Ha Ha Ha.. paused');
       });
 
       player.on('play', () => {

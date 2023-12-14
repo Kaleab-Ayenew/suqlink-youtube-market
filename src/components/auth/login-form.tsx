@@ -25,7 +25,6 @@ export default function LoginUserForm() {
   const { authorize } = useAuth();
   const { mutate: login } = useMutation(client.users.login, {
     onSuccess: (data) => {
-      console.log(data, 'Login data');
       if (!data.token) {
         toast.error(<b>{t('text-wrong-user-name-and-pass')}</b>, {
           className: '-mt-10 xs:mt-0',

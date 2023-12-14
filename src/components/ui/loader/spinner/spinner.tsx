@@ -58,7 +58,7 @@ interface PageLoaderProps {
 
 export const PageLoader = (props: PageLoaderProps) => {
   const { t } = useTranslation('common');
-  const { className, showText = true, text = t('text-loader-title') } = props;
+  const { className, showText = true, text = 'Loading...' } = props;
   return (
     <div className={cn('flex w-full flex-grow text-lg', className)}>
       <SpinnerIcon className="m-auto h-auto w-6 animate-spin" />{' '}

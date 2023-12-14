@@ -66,7 +66,7 @@ const VideoPage: NextPageWithLayout<
   React.useEffect(() => {
     if (router.query?.vid) {
       const { vid } = router.query;
-      console.log('This is router', router.query);
+
       client.videos
         .single_purchased({
           platform_id: vid,
@@ -119,7 +119,6 @@ const VideoPage: NextPageWithLayout<
 
   React.useEffect(() => {
     if (pvideo?.v_stamp) {
-      console.log('This is VSTAMP', v_stamp);
       const videoId = rotDecrypt(pvideo.v_stamp);
       videoJsOptions.sources[0].src = `https://www.youtube.com/watch?v=${videoId}`;
     }
