@@ -15,7 +15,7 @@ const LicensingPage: NextPageWithLayout = () => {
     <>
       <Seo
         title="Product Licensing"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Sell premium YouTube videos to your followers."
         url={routes.licensing}
       />
       <div className="mx-auto flex h-full w-full max-w-screen-xl flex-col p-4 sm:p-5">

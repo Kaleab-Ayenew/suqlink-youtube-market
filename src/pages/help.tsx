@@ -16,7 +16,7 @@ const HelpPage: NextPageWithLayout = () => {
     <>
       <Seo
         title="Help"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Sell premium YouTube videos to your followers."
         url={routes.help}
       />
       <div className="mx-auto flex h-full w-full max-w-screen-xl flex-col p-4 sm:p-5">

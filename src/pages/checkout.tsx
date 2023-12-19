@@ -53,7 +53,7 @@ const CheckoutPage: NextPageWithLayout = () => {
     <>
       <Seo
         title="Checkout"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Sell premium YouTube videos to your followers."
         url={routes?.checkout}
       />
       <div className="mx-auto flex h-full w-full max-w-screen-sm flex-col p-4 pt-6 sm:p-5 sm:pt-8 md:pt-10 3xl:pt-12">

@@ -75,7 +75,7 @@ const Home: NextPageWithLayout = () => {
     <>
       <Seo
         title="A YouTube Video Marketplace"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Sell premium YouTube videos to your followers."
         url={routes.home}
       />
       {/* <CategoryFilter /> */}

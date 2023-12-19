@@ -82,7 +82,7 @@ const Explore: NextPageWithLayout = () => {
     <>
       <Seo
         title="UI Design Resources, UI Kits, Wireframes, Icons and More"
-        description="Fastest digital download template built with React, NextJS, TypeScript, React-Query and Tailwind CSS."
+        description="Sell premium YouTube videos to your followers."
         url={routes.home}
       />
       <PromotionalSlider />
